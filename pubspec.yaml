@@ -6,8 +6,13 @@ version: 0.1.0
 environment:
   sdk: '>=2.10.0 <3.0.0'
 
-#dependencies:
-#  path: ^1.7.0
+dependencies:
+  http: ^0.13.1
+  crypto: ^3.0.0
+  uniform_data:
+    path: ../uniform_data
 
 dev_dependencies:
   pedantic: ^1.9.0
+  test: ^1.16.8  
+  mockito: ^5.0.3
