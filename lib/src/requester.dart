@@ -55,7 +55,7 @@ class Requester {
 
     final response = await client.post(r,
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        body: jsonEncode(body));
+        body: body == null ? null : jsonEncode(body));
 
     //_logger.info(response.body);
 

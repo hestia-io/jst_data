@@ -54,7 +54,7 @@ class Orders {
                 ..title = item['name']?.toString() ?? ''
                 ..price = (Price()
                   ..currency = 'RMB'
-                  ..value = item['sale_base_price']?.toString() ?? ''))
+                  ..value = item['sale_price']?.toString() ?? ''))
               ..quantityShipped = item['qty'] ?? 0
               ..shippingDetails = (OrderLineItemShippingDetails()
                 ..warehouseId = e['wms_co_id']?.toString() ?? '');
