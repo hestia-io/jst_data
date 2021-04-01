@@ -51,13 +51,13 @@ class Requester {
     final r = Uri.parse('$url?method=$method&partnerid=$partnerId'
         '&$pstr&sign=$sign');
 
-    _logger.info(r, body);
+    _logger.fine(r, body);
 
     final response = await client.post(r,
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         body: body == null ? null : jsonEncode(body));
 
-    //_logger.info(response.body);
+    _logger.fine(response.body);
 
     return jsonDecode(response.body);
   }
