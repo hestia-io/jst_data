@@ -32,6 +32,10 @@ class Jst {
 
   Orders get orders => _orders;
 
+  Future<Map> fetch(String method, {Map body}) {
+    return _requester.fetch(method, body: body);
+  }
+
   Future<void> dispose() async {
     _client.close();
   }
