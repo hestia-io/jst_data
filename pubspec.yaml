@@ -1,6 +1,6 @@
 name: jst_data
 description: JuShuiTan Data.
-version: 0.1.1
+version: 0.1.2
 repository: https://github.com/hestia-io/jst_data
 
 
@@ -10,7 +10,9 @@ environment:
 dependencies:
   http: ^0.13.1
   crypto: ^3.0.0
-  uniform_data: ^0.1.0
+  uniform_data: ^0.1.1
+    #uniform_data: 
+    #path: ../uniform_data 
   logging: ^1.0.1
 
 dev_dependencies:
