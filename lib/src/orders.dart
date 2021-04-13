@@ -65,6 +65,13 @@ class Orders {
         order.status = (OrderStatus()..orderStatus = OrderOrderStatus.shipped);
       }
 
+      if (part.contains('contentDetails')) {
+        order.contentDetails = (OrderContentDetails()
+          ..customAttributes.add(CustomAttribute()
+            ..name = 'note'
+            ..value = (e['remark'] ?? '').toString()));
+      }
+
       return order;
     });
 
