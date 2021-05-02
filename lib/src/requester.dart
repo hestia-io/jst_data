@@ -53,13 +53,15 @@ class Requester {
 
     _logger.fine(r, body);
 
-    final response = await client.post(r,
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        body: body == null ? null : jsonEncode(body));
-
-    _logger.fine(response.body);
-
-    return jsonDecode(response.body);
+    try {
+      final response = await client.post(r,
+          headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+          body: body == null ? null : jsonEncode(body));
+      _logger.fine(response.body);
+      return jsonDecode(response.body);
+    } catch (e) {
+      _logger.severe(e);
+    }
   }
 
   /// 生成签名

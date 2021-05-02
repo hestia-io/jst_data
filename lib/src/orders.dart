@@ -25,7 +25,7 @@ class Orders {
     maxResults ??= 30;
     final pageIndex = IndexPageToken.decode(pageToken, 1);
 
-    _logger.info('pageIndex: $pageIndex, maxResults: $maxResults');
+//_logger.info('pageIndex: $pageIndex, maxResults: $maxResults');
 
     final results = await requester.fetch(listUrl, body: {
       'status': 'Confirmed',
@@ -46,6 +46,7 @@ class Orders {
           ..merchantId = e['shop_id']?.toString() ?? ''
           ..merchantOrderId = e['so_id']?.toString() ?? ''
           ..customerId = e['shop_buyer_id']?.toString() ?? ''
+          ..placedDate = e['io_date']?.toString() ?? ''
           ..lineItems.addAll((e['items'] ?? []).map<OrderLineItem>((item) {
             return OrderLineItem()
               ..id = item['ioi_id']?.toString() ?? ''
